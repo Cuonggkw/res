@@ -46,7 +46,7 @@ const handleAllCategory = () => {
 const handleUpdateCategory = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if (!data.id || !data.parent_category_ID || !data.status) {
+      if (!data.id) {
         resolve({
           EC: 2,
           EM: "Missing required parameters",

@@ -46,7 +46,7 @@ const handleAllTables = () => {
 const handleUpdateTables = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if (!data.id || !data.seating_capacity || !data.status) {
+      if (!data.id) {
         resolve({
           EC: 2,
           EM: "Missing required parameters",

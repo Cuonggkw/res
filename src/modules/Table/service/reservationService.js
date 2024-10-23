@@ -44,12 +44,7 @@ const handleCreateReservation = (data) => {
 const updateReservation = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if (
-        !data.id ||
-        !data.actual_arrival_time ||
-        !data.guest_count ||
-        !data.status
-      ) {
+      if (!data.id) {
         resolve({
           EC: 1,
           EM: "Missing required parameters",
