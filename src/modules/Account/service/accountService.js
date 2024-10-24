@@ -63,7 +63,6 @@ const handleLogin = (data) => {
         where: {
           email: data.email,
         },
-        raw: true,
       });
 
       if (login) {
@@ -204,19 +203,17 @@ const handleDeleteAccounts = (id) => {
 const handleAllAccounts = () => {
   return new Promise(async (resolve, reject) => {
     try {
-      let accounts = await Accounts.findAll({
-        attributes: {
-          exclude: ["password"],
-        },
+      let users = await Accounts.findAll({
+        attributes: ["id", "username", "email", "phone"],
         raw: true,
         nest: true,
       });
 
-      if (accounts) {
+      if (users) {
         resolve({
           EM: "get data success",
           EC: 0,
-          DT: accounts,
+          DT: users,
         });
       }
     } catch (e) {

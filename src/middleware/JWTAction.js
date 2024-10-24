@@ -26,19 +26,41 @@ const verifyToken = (token) => {
   return decoded;
 };
 
-// const extractToken = (req) => {
-//   if (
-//     req.headers.authorization &&
-//     req.headers.authorization.split(" ")[0] === "Bearer"
-//   ) {
-//     return req.headers.authorization.split(" ")[1];
-//   }
-//   return null;
-// };
+const extractToken = (req) => {
+  if (req.headers.authorization) {
+    return req.headers.authorization.split(" ")[1];
+  }
+  return null;
+};
 
 const checkUserJWT = (req, res, next) => {
   if (securePath.includes(req.path)) return next();
+  // let cookies = req.cookies;
+  // let tokenFromHeader = extractToken(req);
+  // console;
+  // if ((cookies && cookies.restaurant) || tokenFromHeader) {
+  //   let token =
+  //     cookies && cookies.restaurant ? cookies.restaurant : tokenFromHeader;
+  //   let decoded = verifyToken(token);
 
+  //   if (decoded) {
+  //     req.user = decoded;
+  //     req.token = token;
+  //     next();
+  //   } else {
+  //     return res.status(401).json({
+  //       EC: -1,
+  //       DT: "",
+  //       EM: "Not authenticated the user",
+  //     });
+  //   }
+  // } else {
+  //   return res.status(401).json({
+  //     EC: -1,
+  //     DT: "",
+  //     EM: "Not authenticated the user",
+  //   });
+  // }
   setTimeout(() => {
     if (req.headers.authorization) {
       const token = req.headers.authorization.split(" ")[1];

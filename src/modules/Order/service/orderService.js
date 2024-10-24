@@ -11,7 +11,6 @@ const handleCreateOrders = (data) => {
         !data.tableID ||
         !data.accountID ||
         !data.total_price ||
-        !data.status ||
         !data.payment
       ) {
         resolve({

@@ -6,7 +6,7 @@ import Menus from "../../Menu/models/menu";
 const CreateDetails = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if (!data.orderID || !data.menuID || !data.quantity || !data.status) {
+      if (!data.orderID || !data.menuID || !data.quantity) {
         resolve({
           EC: 1,
           EM: "Missing required parameter",

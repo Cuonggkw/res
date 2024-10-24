@@ -5,7 +5,7 @@ import { raw } from "body-parser";
 const CreateCategories = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if (!data.categoryName || !data.parent_category_ID || !data.status) {
+      if (!data.categoryName || !data.parent_category_ID) {
         resolve({
           EC: 1,
           EM: "Missing required parameter",

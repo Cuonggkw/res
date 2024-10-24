@@ -33,8 +33,7 @@ const handleCreateMenus = (data) => {
         !data.foodName ||
         !data.price ||
         !data.description ||
-        !data.categorieId ||
-        !data.status
+        !data.categorieId
       ) {
         resolve({
           EC: 1,
@@ -54,7 +53,6 @@ const handleCreateMenus = (data) => {
           EM: "Create success!",
         });
       }
-      // !data.image ||
     } catch (e) {
       reject(e);
     }
