@@ -1,6 +1,4 @@
-import { where } from "sequelize";
 import Categories from "../models/category";
-import { raw } from "body-parser";
 
 const CreateCategories = (data) => {
   return new Promise(async (resolve, reject) => {
@@ -57,6 +55,7 @@ const handleUpdateCategory = (data) => {
         raw: false,
       });
       if (category) {
+        category.categoryName = data.categoryName;
         category.parent_category_ID = data.parent_category_ID;
         category.status = data.status;
 
