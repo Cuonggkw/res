@@ -21,13 +21,27 @@ apiWebRouter(app);
 // config cookie-parser
 app.use(cookieParser());
 
-connectDB();
+// connectDB();
+
+let port = process.env.PORT || 8000;
+const hostname = process.env.HOST_NAME;
+
+(async () => {
+  try {
+    // test connection.
+    await connectDB();
+    app.listen(port, hostname, () => {
+      console.log(`Example app listening on port ${port}`);
+    });
+  } catch (error) {
+    console.log(">>> Error connect to DB: ", error);
+  }
+})();
 
 // app.use((req, res) => {
 //   return res.send("404 not found");
 // });
 
-let port = process.env.PORT || 8000;
-app.listen(port, () => {
-  console.log("Backend Nodejs is running on the port: " + port);
-});
+// app.listen(port, () => {
+//   console.log("Backend Nodejs is running on the port: " + port);
+// });
