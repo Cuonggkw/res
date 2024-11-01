@@ -3,6 +3,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import apiWebRouter from "./route/api";
+import connectDB from "./config/connectDB";
 
 const cors = require("cors");
 
@@ -20,7 +21,7 @@ apiWebRouter(app);
 // config cookie-parser
 app.use(cookieParser());
 
-// connectDB();
+connectDB();
 
 // app.use((req, res) => {
 //   return res.send("404 not found");
