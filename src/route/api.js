@@ -67,7 +67,7 @@ const apiWebRouter = (app) => {
   router.delete("/detail/delete", detailController.DeleteDetails);
   router.get("/detail", detailController.orderDetail);
 
-  return app.use("/restautant.com/v1/api", router);
+  return app.use("/restautant.com/v1/api/", router);
 };
 
 module.exports = apiWebRouter;

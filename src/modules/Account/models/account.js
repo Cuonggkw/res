@@ -1,4 +1,4 @@
-import { DataTypes, Model } from "sequelize";
+const { DataTypes, Model } = require("sequelize");
 import sequelize from "../../../core/database";
 
 class Accounts extends Model {
