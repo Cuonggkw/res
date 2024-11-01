@@ -15,7 +15,7 @@ const apiWebRouter = (app) => {
   // router.all("*", checkUserJWT);
 
   // Accounts
-  router.get("/", getHomePage);
+  router.get("/", accountController.getHomePage);
   router.post("/login", accountController.handleLogin);
   router.post("/logout", accountController.handleLogout);
   router.post("/account/create", accountController.handleCreateAccounts);
@@ -67,7 +67,7 @@ const apiWebRouter = (app) => {
   router.delete("/detail/delete", detailController.DeleteDetails);
   router.get("/detail", detailController.orderDetail);
 
-  return app.use("/restautant.com/v1/api/", router);
+  return app.use("/restautant.com/v1/api", router);
 };
 
 module.exports = apiWebRouter;
