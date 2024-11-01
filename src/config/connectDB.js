@@ -5,9 +5,7 @@ const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize("restaurant", "root", null, {
   host: "127.0.0.1",
   dialect: "mysql",
-  // dialectModule: require("mysql2"),
   logging: false,
-  port: "3306",
   dialectOptions: {
     connectTimeout: 60000, // 60 giây
   },
