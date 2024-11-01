@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 connectDB();
 
-const port = process.env.PORT || 3306;
+const port = process.env.PORT || 8000;
 
 // app.use((req, res) => {
 //   return res.send("404 not found");
