@@ -1,6 +1,5 @@
 import express from "express";
 
-import { getHomePage } from "../modules/Account/controller/accountController";
 import tableController from "../modules/Table/controller/tableController";
 import categoryController from "../modules/Category/controller/categoryController";
 import menuController from "../modules/Menu/controller/menuController";
