@@ -2,7 +2,7 @@ require("dotenv").config();
 import express from "express";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
-import apiRoutes from "./route/api";
+import apiWebRouter from "./route/api";
 
 const cors = require("cors");
 
@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
-app.use("/restautant.com/v1/api", apiRoutes);
+apiWebRouter(app);
 
 // config cookie-parser
 app.use(cookieParser());
