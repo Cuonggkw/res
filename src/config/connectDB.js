@@ -6,7 +6,7 @@ const sequelize = new Sequelize("restaurant", "root", null, {
   host: "localhost",
   dialect: "mysql",
   logging: false,
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 3306,
   dialectOptions: {
     connectTimeout: 60000, // 60 giây
   },
