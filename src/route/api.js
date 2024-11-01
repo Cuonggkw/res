@@ -1,6 +1,9 @@
 import express from "express";
 import accountController from "../modules/Account/controller/accountController";
-import { getHomePage } from "../modules/Account/controller/accountController";
+import {
+  getHomePage,
+  handleAllAccounts,
+} from "../modules/Account/controller/accountController";
 import tableController from "../modules/Table/controller/tableController";
 import categoryController from "../modules/Category/controller/categoryController";
 import menuController from "../modules/Menu/controller/menuController";
@@ -14,13 +17,13 @@ const apiWebRouter = (app) => {
   // router.all("*", checkUserJWT);
 
   // Accounts
-  router.get("/", getHomePage);
+  // router.get("/", getHomePage);
   router.post("/login", accountController.handleLogin);
   router.post("/logout", accountController.handleLogout);
   router.post("/account/create", accountController.handleCreateAccounts);
   router.put("/account/update", accountController.handleUpdateAccounts);
   router.delete("/account/detele", accountController.handleDeleteAccounts);
-  router.get("/account", accountController.handleAllAccounts);
+  router.get("/account", handleAllAccounts);
 
   // Tables
   router.post("/table/create", tableController.handleCreateTables);
