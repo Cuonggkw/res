@@ -5,10 +5,11 @@ const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize("restaurant", "root", null, {
   host: "localhost",
   dialect: "mysql",
+  dialectModule: require("mysql2"),
   logging: false,
-  port: process.env.PORT,
+  port: process.env.PORT || 3306,
   dialectOptions: {
-    connectTimeout: 60000, // 60 giây
+    connectTimeout: 30000, // 60 giây
   },
 });
 
