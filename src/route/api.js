@@ -1,5 +1,5 @@
 import express from "express";
-import accountController from "../modules/Account/controller/accountController";
+
 import { getHomePage } from "../modules/Account/controller/accountController";
 import tableController from "../modules/Table/controller/tableController";
 import categoryController from "../modules/Category/controller/categoryController";
@@ -8,13 +8,14 @@ import orderController from "../modules/Order/controller/orderController";
 import reservationController from "../modules/Table/controller/reservationController";
 import detailController from "../modules/Order/controller/detailController";
 import { checkUserJWT } from "../middleware/JWTAction";
+const accountController = require("../modules/Account/controller/accountController");
 const router = express.Router();
 
 const apiWebRouter = (app) => {
   // router.all("*", checkUserJWT);
 
   // Accounts
-  router.get("/", accountController.getHomePage);
+  router.get("/", getHomePage);
   router.post("/login", accountController.handleLogin);
   router.post("/logout", accountController.handleLogout);
   router.post("/account/create", accountController.handleCreateAccounts);
