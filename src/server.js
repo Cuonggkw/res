@@ -18,7 +18,7 @@ apiWebRouter(app);
 // config cookie-parser
 app.use(cookieParser());
 
-connectDB();
+// connectDB();
 
 const port = process.env.PORT || 8000;
 
@@ -26,6 +26,14 @@ const port = process.env.PORT || 8000;
 //   return res.send("404 not found");
 // });
 
-app.listen(port, () => {
-  console.log("Backend Nodejs is running on the port: " + port);
-});
+(async () => {
+  try {
+    // test connection.
+    await connectDB();
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`);
+    });
+  } catch (error) {
+    console.log(">>> Error connect to DB: ", error);
+  }
+})();
