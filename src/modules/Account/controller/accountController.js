@@ -1,5 +1,9 @@
 import accountService from "../service/accountService";
 
+const getHomePage = (req, res) => {
+  return res.send("Hello world from controller");
+};
+
 let handleLogin = async (req, res) => {
   try {
     let data = await accountService.handleLogin(req.body);
@@ -119,4 +123,5 @@ module.exports = {
   handleDeleteAccounts,
   handleAllAccounts,
   handleLogout,
+  getHomePage,
 };

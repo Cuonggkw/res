@@ -12,6 +12,7 @@ const router = express.Router();
 router.all("*", checkUserJWT);
 
 // Accounts
+router.get("/", accountController.getHomePage);
 router.post("/login", accountController.handleLogin);
 router.post("/logout", accountController.handleLogout);
 router.post("/account/create", accountController.handleCreateAccounts);

@@ -9,8 +9,8 @@ const cors = require("cors");
 let app = express();
 app.use(cors());
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 app.use("/restautant.com/v1/api", apiRoutes);
 
@@ -19,9 +19,9 @@ app.use(cookieParser());
 
 // connectDB();
 
-app.use((req, res) => {
-  return res.send("404 not found");
-});
+// app.use((req, res) => {
+//   return res.send("404 not found");
+// });
 
 let port = process.env.PORT || 8000;
 app.listen(port, () => {

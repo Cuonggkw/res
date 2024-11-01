@@ -61,6 +61,7 @@ const handleDeleteMenus = async (req, res) => {
 const handleAllMenus = async (req, res) => {
   try {
     let menus = await menuService.handleAllMenus();
+    console.log(menus);
     return res.status(200).json(menus);
   } catch (e) {
     console.log(e);
