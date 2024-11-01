@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { Sequelize } = require("sequelize");
 
 // Option 3: Passing parameters separately (other dialects)
@@ -5,6 +6,7 @@ const sequelize = new Sequelize("restaurant", "root", null, {
   host: "localhost",
   dialect: "mysql",
   logging: false,
+  port: process.env.PORT || 3306,
 });
 
 let connect = async () => {
