@@ -5,7 +5,7 @@ const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize("restaurant", "root", null, {
   host: "localhost",
   dialect: "mysql",
-  dialectModule: require("mysql2"),
+  // dialectModule: require("mysql2"),
   logging: false,
   port: 3306,
   dialectOptions: {
