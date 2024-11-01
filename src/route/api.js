@@ -1,9 +1,6 @@
 import express from "express";
 import accountController from "../modules/Account/controller/accountController";
-import {
-  getHomePage,
-  handleAllAccounts,
-} from "../modules/Account/controller/accountController";
+import { getHomePage } from "../modules/Account/controller/accountController";
 import tableController from "../modules/Table/controller/tableController";
 import categoryController from "../modules/Category/controller/categoryController";
 import menuController from "../modules/Menu/controller/menuController";
@@ -17,13 +14,13 @@ const apiWebRouter = (app) => {
   // router.all("*", checkUserJWT);
 
   // Accounts
-  // router.get("/", getHomePage);
+  router.get("/", accountController.getHomePage);
   router.post("/login", accountController.handleLogin);
   router.post("/logout", accountController.handleLogout);
   router.post("/account/create", accountController.handleCreateAccounts);
   router.put("/account/update", accountController.handleUpdateAccounts);
   router.delete("/account/detele", accountController.handleDeleteAccounts);
-  router.get("/account", handleAllAccounts);
+  router.get("/account", accountController.handleAllAccounts);
 
   // Tables
   router.post("/table/create", tableController.handleCreateTables);
@@ -69,7 +66,7 @@ const apiWebRouter = (app) => {
   router.delete("/detail/delete", detailController.DeleteDetails);
   router.get("/detail", detailController.orderDetail);
 
-  return app.use("/", router);
+  return app.use("/restautant.com/v1/api", router);
 };
 
 module.exports = apiWebRouter;
