@@ -7,7 +7,7 @@ import orderController from "../modules/Order/controller/orderController";
 import reservationController from "../modules/Table/controller/reservationController";
 import detailController from "../modules/Order/controller/detailController";
 import { checkUserJWT } from "../middleware/JWTAction";
-const accountController = require("../modules/Account/controller/accountController");
+import accountController from "../modules/Account/controller/accountController";
 const router = express.Router();
 
 const apiWebRouter = (app) => {
