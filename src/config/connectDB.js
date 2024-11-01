@@ -3,19 +3,12 @@ const { Sequelize } = require("sequelize");
 
 // Option 3: Passing parameters separately (other dialects)
 const sequelize = new Sequelize("restaurant", "root", null, {
-  host: "127.0.0.1",
+  host: "localhost",
   dialect: "mysql",
   logging: false,
-  pool: {
-    max: 100,
-    min: 0,
-    acquire: 1000000,
-    idle: 100000,
-    evict: 2000,
-  },
-  port: process.env.PORT || 3306,
+  port: process.env.PORT,
   dialectOptions: {
-    decimalNumbers: true,
+    connectTimeout: 60000, // 60 giây
   },
 });
 
