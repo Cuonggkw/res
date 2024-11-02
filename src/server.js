@@ -26,14 +26,8 @@ const port = process.env.PORT || 8000;
 //   return res.send("404 not found");
 // });
 
-(async () => {
-  try {
-    // test connection.
-    await connectDB();
-    app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`);
-    });
-  } catch (error) {
-    console.log(">>> Error connect to DB: ", error);
-  }
-})();
+// test connection.
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});

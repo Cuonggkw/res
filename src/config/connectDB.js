@@ -9,7 +9,6 @@ const sequelize = new Sequelize("restaurant", "root", "", {
   port: 3306,
   dialectOptions: {
     connectTimeout: 60000, // 60 giây
-    socketPath: "/xampp/mysql/mysql.sock",
   },
   dialectModule: require("mysql2"),
 });
